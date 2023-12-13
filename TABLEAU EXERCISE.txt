@@ -1,0 +1,179 @@
+REFER FINAL VISUALIZATIONS PERFORMED ON MY TABLEAU PROFILE - https://public.tableau.com/app/profile/dipali.marthak/vizzes
+
+======================================================================
+
+DATA SET USED - https://www.kaggle.com/datasets/gregorut/videogamesales
+==========FIRST VISUALIZATION=============
+
+SHEET 1
+
+1. YEAR IN COLUMNS, SUM(GLOBAL SALES) IN ROWS, GENRE IN MARKS
+2. ASSIGN COLOUR TO GENRE FOR VISUAL INTERPRETATION
+3. ADDED LABEL TO GLOBAL SALES FOR ALL LINES (TRIAL)
+4. ADDED PLATFORM IN FILTER (SELECT ALL TYPES) AND SHOW IN FILTER. TRY REMOVING PS ALL TYPES AND OBSERVE THE CHANGES IN GLOBAL SALES. TRY ALTERNATIVY SEEING ONLY PS SALES.
+
+SHEET 2
+
+1. GENRE IN COLUMNS, SUM(GLOBAL SALES) IN COLUMNS, GENRE IN MARKS AND ASSIGN COLOR
+2. USE SORT DESCENDING BASED ON GLOBAL SALES
+
+==========BINS AND FIELDS=============  
+
+NEW DASHBOARD
+1.SIZE RAGE AUTOMATIC
+2. DROP SHEET1 AND SHEET2
+
+CONTINUE ON SHEET 1
+
+YEAR IN COLUMNS, SUM(GLOBAL SALES) IN ROWS, GENRE IN MARKS
+CREATE BIN ON YEAR WITH SIZE 5
+EXCLUDE NULLS (JUST FOR DEMONSTRATION)
+ON GLOBAL SALES ROW, PERFORM QUICK TABLE CALCULATION FOR 'PERCENT OF TOTAL' AND DRAG THE GENERATED MEASURE TO THE LEFT PANEL AND RENAME IT AS 'Percentage of Global Sales'
+
+==========CALCULATED FIELDS=============
+
+ON Global Sales FIELD, CREATE A Calculated Field for 'Global Sales - EU Sales' and drop it to the ROWS
+BRING OUT 'PERCENTAGE OF GLOBAL SALES' AND PUT IN 'GLOBAL SALES' IN THE ROW ALONG SIDE 'GLOBAL SALES - EU SALES'
+SHOW ME GRAPH: DUAL COMBINATION
+
+
+=====================================SHEET 3==========================================================
+ROWS: GLOBAL SALES, NA SALES
+COLUMNS: YEAR
+===========================================================================================================================
+###########################################################################################################################
+
+DATA SET USED - https://www.kaggle.com/datasets/starbucks/store-locations
+
+
+=====================================SHEET 4==========================================================
+
+COLUMNS:LONGITUDE
+ROWS:LATITUDE
+
+TRY 1 MARKS: POSTAL CODE
+REDUCE ITS SIZE FOR BETTER VIEW
+
+TRY 2 MARKS: POSTAL CODE
+ADJUST DENSITY
+
+TRY 3 MARKS: STATE/PROVINCE
+CHANGE - MAP AND ADD COLORS
+
+
+
+=====================================SHEET 5==========================================================
+SHOW ME - SCATTER PLOTS
+
+SIZE - GLOBAL SALES
+LABEL - GENRE
+COLOR - NA SALES
+LABEL - GLOBAL SALES
+
+
+
+=====================================SHEET 6==========================================================
+SHOW ME - PIE CHART
+
+ANGLE - GLOBAL SALES
+LABEL - GLOBAL SALES
+COLOR - GENRE
+LABEL - GENRE
+
+
+=====================================SHEET 7==========================================================
+SHOW ME - AREA CHART
+
+COLUMN- YEAR
+ROW- NA SALES
+COLOR - GENRE
+LABEL - GENRE
+
+
+
+=====================================JOINS IN TABLEAU=============================================
+SHEET USED
+https://github.com/dipalimarthak/Excel/blob/main/Tableau%20Joins%20File.xlsx
+
+MISSING INFORMATION IN THIS SHEET-
+JobTitle - EmployeeID FOR Ryan Howard
+Salary - 7 OUT OF 9 EmployeeID
+
+TABLEAU USES RELATIONSHIP(JOINS) TO JOIN TABLES
+TO DRAW INFERENCES FOR YOU
+
+
+1. PLUG IN 'DEMOGRAPHICS' AND 'JOB TITLE' IN THE CENTRE AREA AND TABLEAU AUTOMATICALLY DOES THE JOIN WORK FOR YOU
+2. REMOVE 'JOB TITLE'. ON THE DROPDOWN OF 'DEMOGRAPHICS', USE 'OPEN' AND THEN DROP IN 'JOB TITLE' AGAIN AND THE YOU CAN CHOOSE ONE OF 'LEFT',' 'INNER', 'RIGHT', 'FULL OUTER' JOINS
+   YOU CAN THEN SELECT DATA SOURCE OF YOUR CHOICE FROM AVAILABLE COLUMNS
+   
+3. drop in salary
+
+=====================================SHEET 8==========================================================
+
+COLUMN- Name ofEmployee
+ROW- salary
+order it
+
+COLOR - EMPLOYEE SALARY
+
+===================================== TABLEAU PROJECT - DATA IMPORT==========================================================
+DATA SOURCE = https://www.kaggle.com/datasets/alexanderfreberg/airbnb-listings-2016-dataset
+
+DROP IN LISTINGS, OPEN, JOIN WITH CALENDAR
+CHANGE JOIN BASED ON 
+ID = LISTING ID
+
+
+DROP IN REVIEWS
+CHANGE JOIN BASED ON 
+ID = LISTING ID
+
+
+COLUMN- YEAR
+ROW- NA SALES
+
+===================================== SHEET 9 - GRAPH FOR AVG ZIP CODE = TABLEAU PROJECT ==========================================================
+REMOVE REVIEWS JOIN BECAUSE SHEET 1 DOES NOT OPEN FOR LARGE DATA SET IN PUBLIC TABLEAU ACCOUNT
+
+
+COLUMN- ZIPCODE, EXCLUDE NULL ONES
+ROW- PRICE  - CHANGE TO AVERAGE, ORDER 
+COLOUR - ZIPCODE
+
+
+===================================== SHEET 10 - MAP = TABLEAU PROJECT ==========================================================
+REMOVE REVIEWS JOIN BECAUSE SHEET 1 DOES NOT OPEN FOR LARGE DATA SET IN PUBLIC TABLEAU ACCOUNT
+
+
+LONGITUDE, LATITUDE - ZIPCODE
+COLOUR - ZIPCODE
+LABEL - ZIPCODE, AVERAGE PRICE
+
+===================================== SHEET 11 - CALENDAR WHEN USERS SPEND THE MOST ==========================================================
+REMOVE REVIEWS JOIN BECAUSE SHEET 1 DOES NOT OPEN FOR LARGE DATA SET IN PUBLIC TABLEAU ACCOUNT
+
+COLUMN - YEAR =========BREAK IT UP FROM DROPDOWN WITH WEEK
+TO REMOVE THE STEEP DROP IN GRAPH, APPLY FILTER TILL YEAR END
+
+ROW- PRICE(CALENDAR) 
+
+
+===================================== SHEET 12 - AVERAGE PRICE PER BEDROOM ==========================================================
+LISTINGS> BEDROOMS > CONVERT TO MEASURE - DROP IT INTO COLUMN
+ROW= PRICE - CONVERT TOO AVERAGE
+LABEL - PRICE
+COLUMN - YEAR =========BREAK IT UP FROM DROPDOWN WITH WEEK
+TO REMOVE THE STEEP DROP IN GRAPH, APPLY FILTER TILL YEAR END
+
+ROW- AVERAGE PRICE(CALENDAR) 
+
+===================================== SHEET 13 - COMPETITION FOR BEDROOMS  ==========================================================
+LISTINGS> BEDROOMS > DROP IT INTO ROWS
+MARKS- DROP ID - CONVERT TO COUNT DISTINCT
+===================================== DASHBOARD 2  ==========================================================
+AUTOMATIC RESIZE
+
+AND DROP IN ALL VISUALIZATIONS TOGETHER AS PER YOUR CHOICE
+
+YOU CAN ALSO ADD CAPTION TO THE VISUALIZATION
